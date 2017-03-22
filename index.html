@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Train Scheduler</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://bootswatch.com/paper/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina|Arimo" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+<body>
+<div class="container">
+	<div class="jumbotron">
+		<h1 id="title-head" class="text-center">Train Scheduler</h1>
+	</div>
+</div>
+
+<div class="container">
+	<div class="panel panel-primary">
+		<div class="panel-heading">Current Train Schedule</div>
+		<div class="panel-body">
+			<table class="table table-striped">
+				<thead>
+    				<tr>
+      					<th>Train Name</th>
+      					<th>Destination</th>
+      					<th>Frequency (mins)</th>
+      					<th>Next Arrival</th>
+      					<th>Minutes Away</th>
+    				</tr>
+  				</thead>
+  				<tbody>
+
+  				</tbody>
+  			</table>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="panel panel-primary">
+		<div class="panel-heading">Add Train</div>
+		<div class="panel-body">
+			<form>
+				<div class="form-group">
+   					<label>Train Name</label>
+   					<input id="train-name" class="form-control">
+ 				</div>
+				<div class="form-group">
+   					<label>Destination</label>
+   					<input id="destination" class="form-control">
+ 				</div>
+ 				<div class="form-group">
+   					<label>First Train Time (HH:MM - military time)</label>
+   					<input id="first-train" class="form-control">
+ 				</div>
+				<div class="form-group">
+   					<label>Frequency</label>
+   					<input id="frequency" class="form-control">
+ 				</div>
+ 				<button id="submit-btn" type="submit" class="btn btn-primary">Submit</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="assets/javascript/javascript.js"></script>
+</body>
+</html>

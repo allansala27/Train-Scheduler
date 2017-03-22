@@ -1,0 +1,17 @@
+body {
+	font-family: 'Arimo', sans-serif;
+}
+
+.jumbotron {
+	background-color: black;
+	color: white;
+}
+
+#title-head {
+	color: white;
+}
+
+.panel-heading {
+	font-family: 'Baloo Bhaina', cursive;
+	font-size: 18px;
+}
