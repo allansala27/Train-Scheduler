@@ -20,7 +20,7 @@
 	<div class="panel panel-primary">
 		<div class="panel-heading">Current Train Schedule</div>
 		<div class="panel-body">
-			<table class="table table-striped">
+			<table id="train-table" class="table table-striped">
 				<thead>
     				<tr>
       					<th>Train Name</th>
@@ -56,7 +56,7 @@
    					<input id="first-train" class="form-control">
  				</div>
 				<div class="form-group">
-   					<label>Frequency</label>
+   					<label>Frequency (in mins)</label>
    					<input id="frequency" class="form-control">
  				</div>
  				<button id="submit-btn" type="submit" class="btn btn-primary">Submit</button>
@@ -71,6 +71,7 @@
 
 <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 <script type="text/javascript" src="assets/javascript/javascript.js"></script>
 </body>
 </html>

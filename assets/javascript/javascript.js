@@ -22,7 +22,6 @@ $("#submit-btn").on("click", function (e) {
   	var destination = $("#destination").val();
   	var firstTrain = $("#first-train").val();
   	var frequency = $("#frequency").val();
-  	console.log(frequency);
 
   	//push values into firebase
   	dataRef.push({
@@ -34,8 +33,22 @@ $("#submit-btn").on("click", function (e) {
 
   	//retrieve data
   	dataRef.on ("child_added", function (trainInfo) {
+  		//create vars to hold trainInfo values
+  		var name = trainInfo.val().trainName;
+  		var dest = trainInfo.val().destination;
+  		var firstTr = trainInfo.val().firstTrain;
+  		var freq = trainInfo.val().frequency;
+
+  		//time conversions and calculations
+  		var firstTr = moment(firstTr, "hh:mm").subtract(1, "years");
+  		var currentTime = moment();
+  		var diffTime = moment().diff(moment(firstTr), "minutes");
+  		var tRemainder = diffTime % freq;
+  		var minsBeforeNextTrain = freq - tRemainder;
+  		var nextTrain = moment().add(minsBeforeNextTrain, "minutes");
+
   		//create table row per train
-  		var trainRow = $("<tr>");
+  		$("#train-table > tbody").append("<tr><td>" + name +  "</td><td>" + dest + "</td><td>" + freq + "</td><td>"+ nextTrain + "</td><td>"+ minsBeforeNextTrain + "</td></tr>");
   	})
 });
 
