@@ -24,6 +24,7 @@ $("#submit-btn").on("click", function (e) {
   	var frequency = $("#frequency").val();
   	console.log(frequency);
 
+  	//push values into firebase
   	dataRef.push({
   		trainName : trainName,
   		destination : destination,
@@ -31,8 +32,10 @@ $("#submit-btn").on("click", function (e) {
   		frequency : frequency
   	});
 
+  	//retrieve data
   	dataRef.on ("child_added", function (trainInfo) {
-  		
+  		//create table row per train
+  		var trainRow = $("<tr>");
   	})
 });
 
